@@ -1,0 +1,29 @@
+%h1 New Contact Form
+
+= form_for(@contact_form) do |f|
+  = if @contact_form.errors.any?
+    #errorExplanation
+    %h2 Oops, something went wrong:
+    %ul
+      = @contact_form.errors.full_messages.each do |msg|
+        %li
+          = msg
+
+  .field
+    = f.label :name
+    = f.text_field :name
+
+  .field
+    = f.label :email
+    = f.text_field :email
+
+  .field
+    = f.label :message
+    = f.text_field :message
+
+  .hidden_field
+    = f.label :nickname
+    = f.text_field :nickname
+
+  .actions
+    = f.submit "Deliver"

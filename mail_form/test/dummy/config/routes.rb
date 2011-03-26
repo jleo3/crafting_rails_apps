@@ -1,4 +1,6 @@
 Dummy::Application.routes.draw do
+  resources :contact_forms, :only => :create
+  root :to => "contact_forms#new"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
