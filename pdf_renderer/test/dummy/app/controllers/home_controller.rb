@@ -5,4 +5,8 @@ class HomeController < ApplicationController
       format.pdf { render :pdf => "contents" }
     end
   end
+
+  def another
+    render :pdf => "contents", :template => "home/index"
+  end
 end

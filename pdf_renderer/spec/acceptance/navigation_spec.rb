@@ -12,6 +12,15 @@ feature "Navigation of Home Controller" do
     headers['Content-Type'].should eql('application/pdf')
     page.body.should match /Prawn/
   end
+
+  scenario "pdf renderer uses a specified template" do
+    visit '/another.pdf'
+
+    headers['Content-Transfer-Encoding'].should eql('binary')
+    headers['Content-Disposition'].should eql('attachment; filename="contents.pdf"')
+    headers['Content-Type'].should eql('application/pdf')
+    page.body.should match /Prawn/
+  end
     
   protected
   def headers
