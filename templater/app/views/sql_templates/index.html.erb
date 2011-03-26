@@ -1,0 +1,33 @@
+<h1>Listing sql_templates</h1>
+
+<table>
+  <tr>
+    <th>Body</th>
+    <th>Path</th>
+    <th>Format</th>
+    <th>Locale</th>
+    <th>Handler</th>
+    <th>Partial</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @sql_templates.each do |sql_template| %>
+  <tr>
+    <td><%= sql_template.body %></td>
+    <td><%= sql_template.path %></td>
+    <td><%= sql_template.format %></td>
+    <td><%= sql_template.locale %></td>
+    <td><%= sql_template.handler %></td>
+    <td><%= sql_template.partial %></td>
+    <td><%= link_to 'Show', sql_template %></td>
+    <td><%= link_to 'Edit', edit_sql_template_path(sql_template) %></td>
+    <td><%= link_to 'Destroy', sql_template, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Sql template', new_sql_template_path %>

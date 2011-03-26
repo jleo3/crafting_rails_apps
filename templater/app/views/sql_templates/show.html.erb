@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Body:</b>
+  <%= @sql_template.body %>
+</p>
+
+<p>
+  <b>Path:</b>
+  <%= @sql_template.path %>
+</p>
+
+<p>
+  <b>Format:</b>
+  <%= @sql_template.format %>
+</p>
+
+<p>
+  <b>Locale:</b>
+  <%= @sql_template.locale %>
+</p>
+
+<p>
+  <b>Handler:</b>
+  <%= @sql_template.handler %>
+</p>
+
+<p>
+  <b>Partial:</b>
+  <%= @sql_template.partial %>
+</p>
+
+
+<%= link_to 'Edit', edit_sql_template_path(@sql_template) %> |
+<%= link_to 'Back', sql_templates_path %>
